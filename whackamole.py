@@ -44,12 +44,19 @@ def main():
                     print(x//32, y//32)
                     mouse_pos = (x//32, y//32)
                     if mouse_pos == mole_coord:
+                        
                         screen.fill("light green")
                         create_grid()
                         pygame.display.flip()
                         rand_num1 = random.randrange(0, 640)
                         rand_num2 = random.randrange(0,480)
-                        # screen.blit(mole_image, mole_image.get_rect(space =((rand_num1), (rand_num2))))
+
+                        nrand_num1 = (rand_num1//32)*32
+                        nrand_num2 = (rand_num2 // 32) * 32
+                        print(rand_num1, rand_num2)
+                        print(nrand_num1, nrand_num2)
+                        screen.blit(mole_image, mole_image.get_rect(topleft =(nrand_num1, (nrand_num2))))
+                        mole_coord = (nrand_num1//32, nrand_num2//32)
 
 
 
